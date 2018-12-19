@@ -61,10 +61,8 @@ Focus on how code elements **communicate** with each other capturing the **order
 
 ### State machine diagrams
 
+<img align='right' width='350' src='images/5_tech4.png'>
+
 Models **event-based systems**, which accounts for most user interfaces, and considers "key" interactions
 
 - details how the state machine is **entered/exited** and show possible transitions and capture cases where **transitions are forbidden** (ie. settled states)
-
-Example: state diagram for a promise
-
-![state machine](images/5_tech4.png)
