@@ -62,3 +62,41 @@ Web-based services have propelled API design to the **forefront** of many organi
 - favour **immutability** (object state should not be able to be modified): separation between API producer and consumer
 
 - favour **private** classes, fields, and methods
+
+## API Design Process
+
+![API design proc](images/5_apis1.png)
+
+1. What is the goal of the API?
+  - languages
+  - protocols
+  - platforms
+  - formats
+2. Who is the customer?
+  - versioning
+  - licensing
+  - authentication
+
+## Usability
+Provide **effective affordances**, such as meaningful parameter types and data formats by thinking about how the APIs will be used in practice.
+
+- think about **actions** and **error rates** for mapping and model
+- think about **user satisfaction** for feedback
+
+**visibility:** make it easier for a developer to understand what the API does and make it hard to misuse  
+Ex. `items.sort("clearance")` can be misused if "clearance" is spelled incorrectly. Refactor to `items.sort(Filter.CLEARANCE)`.
+
+**model:** abstractions that are easy to keep in mind  
+Ex. `store.get(pid: string)`: "get" isn't very descriptive, so make it fit with the mental models. Refactor to `store.getProduct(pid: string)`. `store.getDept(did:string).getShelf(sid: string).getProduct(pid: string)` can also be refactored to the same method above; the developer doesn't care about the department and shelf.
+
+**mapping:** between ideas of developer and affordances
+Ex. `store.getProduct(pid: string): any` can be refactored to `store.getProduct(pid: string): Product` so the developer knows exactly what you're getting back
+
+**feedback:** constant and early feedback when an API is used incorrectly
+Ex. `items.sort("clearamce")` should check if the parameter is known, and throw an error with a *descriptive* message
+
+## Platforms
+
+API platforms are now an extremely popular way of **building business value**
+- emerged in the early 2000s when companies realized they could focus their development efforts on building a **core set of functionality** that could be **extended by customers** or third party organizations
+- think about **authentication, versioning, and how to migrate to new versions**
