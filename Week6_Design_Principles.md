@@ -14,9 +14,9 @@
 - harder to reuse independently  
 - harder to understand because it can't be considered in isolation
 
-<img align='right' width='300' src='https://github.com/ubccpsc/310/raw/2018sept/readings/figures/coupling_flow.png'>
+<img align='right' width='400' src='https://github.com/ubccpsc/310/raw/2018sept/readings/figures/coupling_flow.png'>
 
-#### Types of coupling
+### Types of coupling
 
 ***data coupling:*** classes share data through primitive parameters  
 ie. `setSize(width: number, height: number) {}`
@@ -31,7 +31,7 @@ ie. `handler(event:keyboardEvent, status: boolean)`: status is unclear the handl
 
 ***content coupling:*** internal state of one unit is modified by another. This is a **breakdown of information hiding**.
 
-#### Ways to decrease coupling
+### Ways to decrease coupling
 
 - minimize **interfaces** between elements  
 - minimize **complexity of interfaces**: makes interaction between program elements clearer and easier to reason about and evolve  
@@ -48,9 +48,9 @@ ie. `handler(event:keyboardEvent, status: boolean)`: status is unclear the handl
 - proliferation of classes within a system makes it easier to understand a single class
   - simplifies any future bug fixes or feature additions
 
-<img align='right' width='300' src='https://github.com/ubccpsc/310/raw/2018sept/readings/figures/cohesion_flow.png'>
+<img align='right' width='400' src='https://github.com/ubccpsc/310/raw/2018sept/readings/figures/cohesion_flow.png'>
 
-#### Types of cohesion
+### Types of cohesion
 
 ***functional cohesion:*** all code contributes to a single feature or task
 
@@ -87,14 +87,14 @@ Design symptoms:
 - ***opaque:*** hard to understand
   - ie. putting functions into existing abstractions instead of building new classes
 
-#### Single responsibility
+### Single responsibility
 A software module should do **one thing** and do it well.  
 Design patterns:
 - **strategy pattern:** modules encapsulate algorithms
 - **command pattern:** small modules that only provide features needed for a specific action
 - **state pattern:** encapsulates all behaviours for a state in a module
 
-#### Open/closed principle
+### Open/closed principle
 Modules should be **open to extension** but **closed to modification**.
 - encourages engineers to design code to be more **amenable to future change**
   - think explicitly about which parts of their systems should enable future feature additions and which should not
@@ -103,15 +103,15 @@ Modules should be **open to extension** but **closed to modification**.
 - common **code smell**: `instanceof` or `typeof` checks - if a system is extended, client code will need to be updated so type checking checks for the new features
 - sometimes supertypes have private fields, so subtypes are better insulated from changes in the supertype
 
-#### Liskov substitution
+### Liskov substitution
 Any object can be **interchanged** with any other object that has the **same parent type**.
 
-#### Interface segregation
+### Interface segregation
 Clients should **not** be forced to **depend on interfaces they do not use**.
 - have smaller, *cohesive* interfaces
 - compose a larger interface with smaller interfaces
 
-#### Dependency inversion
+### Dependency inversion
 Classes should **depend on abstractions**, not **implementations**.
 - helps to design implementations that are as **decoupled** from one another as possible
   - by injecting an interface, and have the classes take dependencies on the **interface** instead
