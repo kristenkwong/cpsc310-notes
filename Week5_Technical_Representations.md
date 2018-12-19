@@ -22,7 +22,7 @@ Each can be considered a **view** of the system
 - typically concentrate on specific **concerns, scenarios, or stakeholders**
 - views typically **overlap** - maintaining consistency between views is important, but can also identify problems in deployment (ie. can't get information between classes)
 
-![structural vs behavioural](/images/5_tech2.png)
+![structural vs behavioural](images/5_tech2.png)
 
 ***structural diagrams:*** key elements and relationships within the system; includes **class diagrams** and **deployment diagrams**
 
@@ -45,7 +45,7 @@ Static representations of software **elements** and **relationships**.
 
 ### Deployment diagrams (static)
 
-<img align='right' width='350' src='https://github.com/ubccpsc/310/raw/2018sept/readings/figures/uml-deploy.png'>
+<img align='right' width='350' src='images/5_tech3.png'>
 
 Overlay static class diagrams onto the **execution containers** and **physical machines** upon which they will reside.
 
@@ -67,4 +67,4 @@ Models **event-based systems**, which accounts for most user interfaces, and con
 
 Example: state diagram for a promise
 
-![state machine](https://github.com/ubccpsc/310/raw/2018sept/readings/figures/uml-state-promises.png)
+![state machine](images/5_tech4.png)
